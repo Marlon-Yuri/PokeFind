@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+import styled from 'styled-components'
+import Pokemon from './Poke'
+import { createGlobalStyle } from 'styled-components'
+const GlobalStyle = createGlobalStyle`
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
+`
 
-export default App;
+
+const Header=styled.div`
+height:20vh;
+width:100vw;
+background-color:black;
+color:white;
+display:flex;
+justify-content:center;
+align-items: center;
+`
+const H1=styled.h1`
+font-size:7vw;
+font-family: 'Square Peg', cursive;
+`
+export default class PokeSrc extends React.Component{
+  render(){
+    return(
+      <>
+       <Header>
+        <GlobalStyle/>
+      <H1>Procure seu pokemón</H1>
+      </Header>
+      <Pokemon/>
+      </>
+     
+    )
+  }
+}
